@@ -28,11 +28,11 @@ function Checkout() {
   const user = useSelector(selectUserInfo);
   const items = useSelector(selectItems);
   const currentOrder = useSelector(selectCurrentOrder);
-
   const totalAmount = items.reduce(
-    (amount, item) => discountedPrice(item.product) * item.quantity + amount,
+    (amount, item) => (discountedPrice(item.product) * item.quantity * 0.5) + amount,
     0
   );
+  
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
 
   const [selectedAddress, setSelectedAddress] = useState(null);

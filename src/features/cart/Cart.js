@@ -27,8 +27,16 @@ export default function Cart() {
   );
   const totalItems = items.reduce((total, item) => item.quantity + total, 0);
 
+//Set cuppon
+  const [couponApplied, setCouponApplied] = useState(false);
+  const discountedTotalAmount = totalAmount * 0.5; // 50% discount
+
+  const handleApplyCoupon = () => {
+    setCouponApplied(true);
+  };
+
   const handleQuantity = (e, item) => {
-    dispatch(updateCartAsync({id:item.id, quantity: +e.target.value }));
+    dispatch(updateCartAsync({ id: item.id, quantity: +e.target.value }));
   };
 
   const handleRemove = (e, id) => {
@@ -108,11 +116,11 @@ export default function Cart() {
                             dangerOption="Delete"
                             cancelOption="Cancel"
                             dangerAction={(e) => handleRemove(e, item.id)}
-                            cancelAction={()=>setOpenModal(null)}
+                            cancelAction={() => setOpenModal(null)}
                             showModal={openModal === item.id}
                           ></Modal>
                           <button
-                            onClick={e=>{setOpenModal(item.id)}}
+                            onClick={e => { setOpenModal(item.id) }}
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
                           >
@@ -130,7 +138,8 @@ export default function Cart() {
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
             <div className="flex justify-between my-2 text-base font-medium text-gray-900">
               <p>Subtotal</p>
-              <p>$ {totalAmount}</p>
+              {/* Display the discounted total amount if coupon is applied */}
+              {couponApplied ? <p>$ {discountedTotalAmount.toFixed(2)}</p> : <p>$ {totalAmount.toFixed(2)}</p>}
             </div>
             <div className="flex justify-between my-2 text-base font-medium text-gray-900">
               <p>Total Items in Cart</p>
@@ -140,7 +149,16 @@ export default function Cart() {
               Shipping and taxes calculated at checkout.
             </p>
             <div className="mt-6">
-              <Link
+              {/* Add the "Apply Coupon" button */}
+              {!couponApplied && (
+                <button
+                  onClick={handleApplyCoupon}
+                  className="flex items-center justify-center rounded-md border border-transparent bg-red-600 m-5 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-red-700"
+                >
+                  Apply Coupon (50% OFF)
+                </button>
+              )}
+                <Link
                 to="/checkout"
                 className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
               >
