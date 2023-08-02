@@ -1,46 +1,59 @@
-# Getting Started with Create React App and Redux
+# MERN E-Commerce Website - College Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Welcome to MERN E-Commerce website, a college project.
 
-## Available Scripts
+## Table of Contents
+1. [Features](#features)
+2. [Technical Details](#technical-details)
+3. [Acknowledgments](#acknowledgments)
 
-In the project directory, you can run:
+## 1. Features
 
-### `npm start`
+🔥 This project showcases an E-Commerce website with the following features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Product Lists: Browse and explore a wide range of products available for purchase.
+- Product Details: View detailed information about each product, including images, descriptions, and pricing.
+- Cart: Add and manage selected items in the shopping cart.
+- Checkout: Securely process orders for payment and delivery.
+- Secure Card Payments / Cash Payments: Provide users with multiple payment options.
+- Admin Panel: Administrators can manage orders and products through an intuitive panel.
+- Sorting, Filtering, and Pagination: Enhance the user experience with efficient data handling.
+- Authentication: Implement user authentication using Passport JS strategies.
+- Order Emails: Send order confirmation and status emails to users.
+- Reset Password Emails: Allow users to reset their passwords securely.
+- User Profile: Users can view and manage their profile information.
+- User Orders: Users can track their order history.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 2. Technical Details
 
-### `npm test`
+🔥 The project is built using the following technologies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Frontend:
+  - React 18 with Tailwind CSS: Creating responsive and visually appealing user interfaces.
+  - Redux Toolkit with Async Thunk: Managing state and asynchronous actions efficiently.
+  - React Router v6: Handling client-side routing.
+  - JSON-server: Used for front-end testing and mocking API responses.
 
-### `npm run build`
+- Backend:
+  - MongoDB: Database for storing product, user, and order information.
+  - Mongoose v7: Object Data Modeling (ODM) for MongoDB, providing a schema-based solution.
+  - Express: REST API implementation for handling server-side requests.
+  - Authentication: Passport JS for user authentication.
+  - API Authentication: Passport JWT for securing API endpoints.
+  - MongoDB Atlas: Cloud database service for seamless deployment and management.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Deployment:
+  - Vercel: Server deployment for hosting the website.
+  - Nodemailer: Used with GMail SMTP system for sending emails (order confirmation, password reset).
+  - Stripe: Integrated with PaymentIntent for secure and custom payment flows.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Acknowledgments
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🙏 Special thanks to **CoderDost** for providing inspiration and guidance throughout the development process.
 
-### `npm run eject`
+You can find more tutorials and content at [CoderDost's YouTube Channel](http://youtube.com/c/CoderDost).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thank you for using our MERN E-Commerce website! We hope you enjoy exploring its features and functionalities. If you have any questions or encounter any issues, please don't hesitate to contact us. Happy shopping! 😊
